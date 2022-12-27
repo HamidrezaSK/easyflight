@@ -1,0 +1,13 @@
+{
+    "dev": {
+        "django_settings": "ticket.settings",
+        "profile_name": "eb-cli",
+        "project_name": "ticket",
+        "runtime": "python3.9",
+        "s3_bucket": "zappa-984q7ujfu",
+        "vpc_config" : {
+            "SubnetIds": ["subnet-0d231753df5abeaec", "subnet-093e041b05c4cbe6c", "subnet-0a34d5d6604212117", "subnet-0c07d4ac3eb9c53a8"],
+            "SecurityGroupIds": [ "sg-028dff2d1801fc7cc" ]
+        }
+    }
+}
