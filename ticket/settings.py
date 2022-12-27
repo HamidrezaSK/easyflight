@@ -96,6 +96,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ticket.wsgi.application'
 
+REST_FRAMEWORK = {
+  'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases

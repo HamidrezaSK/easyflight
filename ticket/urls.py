@@ -15,17 +15,30 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.urls import path, re_path
-from flight.views import AirlineList, AirlineDetail
+from flight.views import AirlineList, AirlineDetail, AirplaneDetail, AirplaneList, AirportDetail, AirportList, RouteDetail, RouteList, SeatDetail, SeatList, FlightDetail, FlightList
 # from rest_framework.documentation import include_docs_urls
 
 
-from rest_framework_swagger.views import get_swagger_view
+from rest_framework.schemas import get_schema_view
 
-schema_view = get_swagger_view(title="Swagger Docs")
+
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('api/airline/', AirlineList.as_view()),
-    path('api/airline/{id}', AirlineDetail.as_view()),
-    re_path(r'^api/docs/', schema_view),
+    path('api/Airline/', AirlineList.as_view()),
+    path('api/Airline/{id}', AirlineDetail.as_view()),
+    path('api/Airplane/', AirplaneList.as_view()),
+    path('api/Airplane/{id}', AirplaneDetail.as_view()),
+    path('api/Airport/', AirportList.as_view()),
+    path('api/Airport/{id}', AirportDetail.as_view()),
+    path('api/Route/', RouteList.as_view()),
+    path('api/Route/{id}', RouteDetail.as_view()),
+    path('api/Seat/', SeatList.as_view()),
+    path('api/Seat/{id}', SeatDetail.as_view()),
+    path('api/Flight/', FlightList.as_view()),
+    path('api/Flight/{id}', FlightDetail.as_view()),
+    path('docs/', get_schema_view(
+        title="Easyflight",
+        description="API for all things …"
+    ), name='openapi-schema'),
 ]
