@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'flight',
     'django_s3_storage',
     'zappa_django_utils',
+    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
