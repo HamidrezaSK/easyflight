@@ -109,10 +109,10 @@ WSGI_APPLICATION = 'ticket.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'easyflightdb',
+        'NAME': 'easyflighttest',
         'USER': 'postgres',
         'PASSWORD': '83c0e1c1-7614-4d83-9b07-d09e97fee300',
-        'HOST': 'easyflightdb.csmgu64qo4qo.us-west-2.rds.amazonaws.com',
+        'HOST': 'easyflighttest.csmgu64qo4qo.us-west-2.rds.amazonaws.com',
         'PORT': 5432,
     }
 }
