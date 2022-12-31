@@ -44,10 +44,17 @@ STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 # if you have configured a custom domain for your static files use:
 #AWS_S3_PUBLIC_URL_STATIC = "<https://static.yourdomain.com/>"
 
-ALLOWED_HOSTS = [
-    'kwkzd4xg78.execute-api.us-west-2.amazonaws.com',
-    '127.0.0.1',
-    ]
+# ALLOWED_HOSTS = [
+#     'kwkzd4xg78.execute-api.us-west-2.amazonaws.com',
+#     '127.0.0.1',
+#     ]
+
+
+ALLOWED_HOSTS=['*']
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+
 
 
 # Application definition
@@ -64,6 +71,7 @@ INSTALLED_APPS = [
     'django_s3_storage',
     'zappa_django_utils',
     'rest_framework_swagger',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -74,6 +82,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'ticket.urls'
